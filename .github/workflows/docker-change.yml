@@ -1,0 +1,24 @@
+name: Trigger docker build
+on:
+  push:
+    paths:
+      - 'apps/*/Dockerfile'
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # No shallow clone, we need all history!
+      - name: Find Dockerfile that changed
+        run: |
+          CHANGED_DOCKERFILES=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | egrep '^apps/[^/]+/Dockerfile$')
+          CHANGED_APP_NAME=$(echo $CHANGED_DOCKERFILES | cut -d '/' -f 2  | sort | head -n 1)
+          echo "CHANGED_APP_NAME=$CHANGED_APP_NAME" >> $GITHUB_ENV
+      - name: Repository Dispatch
+        if: ${{ env.CHANGED_APP_NAME }}
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          event-type: trigger-docker-build
+          client-payload: '{"app_name": "${{ env.CHANGED_APP_NAME }}" }'

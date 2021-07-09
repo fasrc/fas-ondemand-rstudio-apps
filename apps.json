@@ -1,0 +1,28 @@
+{
+    "apps": [
+        {
+            "app_name": "fas-rstudio-generic",
+            "cpu": {
+                "max": 16,
+                "min": 1,
+                "select": true,
+                "value": 4
+            },
+            "docker_image": "harvardat/rstudio-master:latest",
+            "memory": {
+                "max": 32,
+                "min": 4,
+                "select": true,
+                "value": 8
+            },
+            "title": "Rstudio Server"
+        }
+    ],
+    "base": {
+        "app_type": "rstudio",
+        "docker_image": "harvardat/rstudio-master:latest",
+        "git_branch": "master",
+        "git_dir": "fas-ondemand-rstudio",
+        "git_url": "https://github.com/fasrc/fas-ondemand-rstudio.git"
+    }
+}
