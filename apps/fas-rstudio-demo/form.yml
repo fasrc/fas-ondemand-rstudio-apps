@@ -1,0 +1,42 @@
+---
+title: Rstudio Server - Demo
+cluster: "academic"
+attributes:
+  modules: null
+  extra_rstudio_args: ""
+  bc_queue: "academic"
+  custom_time:
+    label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM)."
+    value: "04:00:00"
+    widget: text_field
+  custom_email_address:
+    label: email address for status notification
+    widget: text_field
+  
+  custom_memory_per_node: 16
+  
+  
+  custom_num_cores: 8
+  
+  custom_num_gpus: 0 
+  rstudio_version: harvardat_rstudio-master_latest.sif
+  custom_vanillaconf:
+    label: "Start rstudio with a new configuration"
+    widget: check_box
+    value: 1
+    help: |
+          **_Checking this box will start rstudio with a fresh configuration._** 
+          
+          This is useful if you need to run different instances at the same time with different configurations.<br> 
+          Leave the box unchecked if you want rstudio to start with the default configuration you have in your ~/.rstudio
+
+form:
+  - modules
+  - extra_rstudio_args
+  - bc_queue
+  - custom_memory_per_node
+  - custom_num_cores
+  - custom_time
+  - rstudio_version
+  - custom_vanillaconf
+  - custom_num_gpus

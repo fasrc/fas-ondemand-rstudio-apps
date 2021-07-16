@@ -16,6 +16,38 @@
                 "value": 8
             },
             "title": "Rstudio Server"
+        },
+        {
+            "app_name": "fas-rstudio-demo",
+            "cpu": {
+                "value": 8
+            },
+            "docker_image": "harvardat/rstudio-master:latest",
+            "memory": {
+                "value": 16
+            },
+            "packages": {
+                "bioc": [
+                    "clusterProfiler",
+                    "DESeq2",
+                    "edgeR",
+                    "enrichplot"
+                ],
+                "cran": [
+                    "data.table",
+                    "dplyr",
+                    "ggnewscale",
+                    "msigdbr",
+                    "pheatmap",
+                    "Seurat",
+                    "tibble",
+                    "VennDiagram"
+                ],
+                "github": [
+                    "YuLab-SMU/clusterProfiler.dplyr"
+                ]
+            },
+            "title": "Rstudio Server - Demo"
         }
     ],
     "base": {
