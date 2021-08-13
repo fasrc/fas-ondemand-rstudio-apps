@@ -182,7 +182,7 @@ def load_apps():
     for key in ('app_type', 'git_url', 'git_dir', 'git_branch', 'docker_image'):
         assert key in data['base'], f"Base missing required attribute: {key}"
     for i, app in enumerate(data['apps']):
-        for key in ('app_name', 'title', 'docker_image', 'cpu', 'memory'):
+        for key in ('app_name', 'title', 'cpu', 'memory'):
             assert key in app, f"App {i} is missing required attribute: {key} {app}"
 
     return data
