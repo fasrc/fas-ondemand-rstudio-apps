@@ -1,14 +1,13 @@
 {
     "apps": [
         {
-            "app_name": "fas-rstudio-generic",
+            "app_name": "fas-rstudio-general",
             "cpu": {
                 "max": 16,
                 "min": 1,
                 "select": true,
                 "value": 4
             },
-            "docker_image": "harvardat/rstudio-master:latest",
             "memory": {
                 "max": 32,
                 "min": 4,
@@ -16,43 +15,11 @@
                 "value": 8
             },
             "title": "Rstudio Server"
-        },
-        {
-            "app_name": "fas-rstudio-demo",
-            "cpu": {
-                "value": 8
-            },
-            "docker_image": "harvardat/rstudio-master:latest",
-            "memory": {
-                "value": 16
-            },
-            "packages": {
-                "bioc": [
-                    "clusterProfiler",
-                    "DESeq2",
-                    "edgeR",
-                    "enrichplot"
-                ],
-                "cran": [
-                    "data.table",
-                    "dplyr",
-                    "ggnewscale",
-                    "msigdbr",
-                    "pheatmap",
-                    "Seurat",
-                    "tibble",
-                    "VennDiagram"
-                ],
-                "github": [
-                    "YuLab-SMU/clusterProfiler.dplyr"
-                ]
-            },
-            "title": "Rstudio Server - Demo"
         }
     ],
     "base": {
         "app_type": "rstudio",
-        "docker_image": "harvardat/rstudio-master:latest",
+        "docker_image": "harvardat/rstudio-master:1a573c0a",
         "git_branch": "master",
         "git_dir": "fas-ondemand-rstudio",
         "git_url": "https://github.com/fasrc/fas-ondemand-rstudio.git"
