@@ -3,16 +3,10 @@
         {
             "app_name": "fas-rstudio-general",
             "cpu": {
-                "max": 16,
-                "min": 1,
-                "select": true,
-                "value": 4
+                "value": 8
             },
             "memory": {
-                "max": 32,
-                "min": 4,
-                "select": true,
-                "value": 8
+                "value": 16
             },
             "title": "Rstudio Server"
         }

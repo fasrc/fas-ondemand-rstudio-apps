@@ -15,23 +15,10 @@ attributes:
     label: email address for status notification
     widget: text_field
   
-  custom_memory_per_node:
-    label: Memory Allocation in GB
-    value: 8
-    min: 32
-    step: 1
-    max: 32
-    widget: number_field
+  custom_memory_per_node: 16
   
   
-  custom_num_cores:
-    label: Number of cores
-    value: 4
-    min: 1
-    step: 1
-    max: 16
-    widget: number_field
-    help: "Number of Cpus to allocate"
+  custom_num_cores: 8
   
   custom_num_gpus: 0 
   rstudio_version: harvardat_rstudio-master_1a573c0a.sif
