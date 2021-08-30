@@ -21,7 +21,7 @@ attributes:
   custom_num_cores: 8
   
   custom_num_gpus: 0 
-  rstudio_version: harvardat_rstudio-master_1a573c0a.sif
+  rstudio_version: harvardat_rstudio-master_5d64165f.sif
   custom_vanillaconf:
     label: "Start rstudio with a new configuration"
     widget: check_box
