@@ -78,7 +78,7 @@ def update_form_and_manifest(base, app):
     if memory_select:
         erb_vars.append(f"@custom_memory_per_node_select = true")
         erb_vars.append(f"@custom_memory_per_node_min = {memory_min}")
-        erb_vars.append(f"@custom_memory_per_node_min = {memory_max}")
+        erb_vars.append(f"@custom_memory_per_node_max = {memory_max}")
     erb_vars.append(f"@custom_memory_per_node = {memory_value}")
     if cpu_select:
         erb_vars.append(f"@custom_num_cores_select = true")
