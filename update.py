@@ -66,6 +66,8 @@ def update_form_and_manifest(base, app):
     cpu_min = cpu.get('min')
     cpu_max = cpu.get('max')
 
+    custom_time = app.get("custom_time")
+
     # The OnDemand cluster uses Singularity for containers so the docker image
     # will ultimately be converted and turned into a SIF file. Our naming convention
     # is based on the existing dockerhub image name.
@@ -75,6 +77,8 @@ def update_form_and_manifest(base, app):
     erb_vars = []
     erb_vars.append(f"@title = '{title}'")
     erb_vars.append(f"@{app_type}_version = '{singularity_filename}'")
+    if custom_time:
+        erb_vars.append(f"@custom_time = '{custom_time}'")
     if memory_select:
         erb_vars.append(f"@custom_memory_per_node_select = true")
         erb_vars.append(f"@custom_memory_per_node_min = {memory_min}")
