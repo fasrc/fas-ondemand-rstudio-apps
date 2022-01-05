@@ -9,6 +9,18 @@
                 "value": 16
             },
             "title": "Rstudio Server"
+        },
+        {
+            "app_name": "fas-rstudio-scrb155",
+            "cpu": {
+                "value": 8
+            },
+            "custom_time": "2-00:00",
+            "docker_image": "harvardat/rstudio-scrb155:e5178a6c",
+            "memory": {
+                "value": 16
+            },
+            "title": "Rstudio Server - SCRB 155"
         }
     ],
     "base": {
