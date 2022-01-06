@@ -16,7 +16,7 @@
                 "value": 8
             },
             "custom_time": "2-00:00",
-            "docker_image": "harvardat/rstudio-scrb155:e5178a6c",
+            "docker_image": "harvardat/rstudio-scrb155:1996de3f",
             "memory": {
                 "value": 16
             },
