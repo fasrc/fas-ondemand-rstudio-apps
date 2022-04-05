@@ -21,11 +21,21 @@
                 "value": 16
             },
             "title": "Rstudio Server - SCRB 155"
+        },
+        {
+            "app_name": "fas-rstudio-scrb50",
+            "cpu": {
+                "value": 8
+            },
+            "memory": {
+                "value": 16
+            },
+            "title": "Rstudio Server - SCRB 50"
         }
     ],
     "base": {
         "app_type": "rstudio",
-        "docker_image": "harvardat/rstudio-master:4bbadfad", 
+        "docker_image": "harvardat/rstudio-master:4bbadfad",
         "git_branch": "master",
         "git_dir": "fas-ondemand-rstudio",
         "git_url": "https://github.com/fasrc/fas-ondemand-rstudio.git"
