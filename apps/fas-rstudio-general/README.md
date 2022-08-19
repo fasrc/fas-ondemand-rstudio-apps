@@ -4,9 +4,9 @@ This is the default image for Rstudio in FAS OnDemand. It's intended to meet the
 
 ## Base Image
 
-This image is based on the [https://rocker-project.org/](Rocker Project) and in particular the [https://github.com/rocker-org/rocker-versioned2](Version-stable Rocker Images) which install a fixed version of R from source and R packages from a fixed snapshot of CRAN for reproducibility. 
+This image is based on the [Rocker Project](https://rocker-project.org/) and in particular the [Version-stable Rocker Images](https://github.com/rocker-org/rocker-versioned2) which install a fixed version of R from source and R packages from a fixed snapshot of CRAN for reproducibility. 
 
-See [https://hub.docker.com/r/rocker/verse/tags](rocker/verse) on docker hub.
+See [rocker/verse](https://hub.docker.com/r/rocker/verse/tags) on docker hub.
 
 ## R dependencies
 
