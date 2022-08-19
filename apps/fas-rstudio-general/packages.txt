@@ -5,6 +5,7 @@ assertthat                 assertthat      0.2.1
 astrochron                 astrochron        1.1
 backports                   backports      1.4.1
 base64enc                   base64enc      0.1-3
+BayesLCA                     BayesLCA        1.9
 BH                                 BH   1.78.0-0
 BiocManager               BiocManager    1.30.18
 bit                               bit      4.0.4
@@ -26,6 +27,7 @@ checkmate                   checkmate      2.1.0
 classInt                     classInt      0.4-7
 cli                               cli      3.3.0
 clipr                           clipr      0.8.0
+coda                             coda     0.19-4
 colorspace                 colorspace      2.0-3
 commonmark                 commonmark      1.8.0
 conflicted                 conflicted      1.1.0
@@ -63,7 +65,7 @@ evaluate                     evaluate       0.15
 fansi                           fansi      1.0.3
 farver                         farver      2.1.1
 fastmap                       fastmap      1.1.0
-fields                         fields       14.0
+fields                         fields       14.1
 fontawesome               fontawesome      0.3.0
 forcats                       forcats      0.5.1
 foreach                       foreach      1.5.2
@@ -72,7 +74,7 @@ formula.tools           formula.tools      1.7.1
 fs                                 fs      1.5.2
 fst                               fst      0.9.8
 fstcore                       fstcore     0.9.12
-furrr                           furrr      0.3.0
+furrr                           furrr      0.3.1
 future                         future     1.27.0
 future.apply             future.apply      1.9.0
 gargle                         gargle      1.2.0
@@ -92,7 +94,7 @@ gtable                         gtable      0.3.0
 hardhat                       hardhat      1.2.0
 haven                           haven      2.5.0
 highr                           highr        0.9
-Hmisc                           Hmisc      4.7-0
+Hmisc                           Hmisc      4.7-1
 hms                               hms      1.1.1
 htmlTable                   htmlTable      2.4.1
 htmltools                   htmltools      0.5.3
@@ -132,8 +134,10 @@ magrittr                     magrittr      2.0.3
 maps                             maps      3.4.0
 markdown                     markdown        1.1
 matrixcalc                 matrixcalc      1.0-5
+MatrixModels             MatrixModels      0.5-0
 matrixStats               matrixStats     0.62.0
 mcmc                             mcmc      0.9-7
+MCMCpack                     MCMCpack      1.6-3
 memoise                       memoise      2.0.1
 mime                             mime       0.12
 miniUI                         miniUI    0.1.1.1
@@ -175,6 +179,7 @@ promises                     promises    1.2.0.1
 proxy                           proxy     0.4-27
 ps                                 ps      1.7.1
 purrr                           purrr      0.3.4
+quantreg                     quantreg       5.94
 R.matlab                     R.matlab      3.6.2
 R.methodsS3               R.methodsS3      1.8.2
 R.oo                             R.oo     1.25.0
@@ -183,8 +188,8 @@ r2d3                             r2d3      0.2.6
 R6                                 R6      2.5.1
 ragg                             ragg      1.2.2
 rappdirs                     rappdirs      0.3.3
-raster                         raster     3.5-21
-rbibutils                   rbibutils      2.2.8
+raster                         raster     3.5-29
+rbibutils                   rbibutils      2.2.9
 rcmdcheck                   rcmdcheck      1.4.0
 RColorBrewer             RColorBrewer      1.1-3
 Rcpp                             Rcpp      1.0.9
@@ -233,6 +238,7 @@ snakecase                   snakecase     0.11.0
 sourcetools               sourcetools      0.1.7
 sp                                 sp      1.5-0
 spam                             spam      2.9-1
+SparseM                       SparseM       1.81
 SQUAREM                       SQUAREM     2021.1
 StanHeaders               StanHeaders   2.21.0-7
 stringi                       stringi      1.7.8
