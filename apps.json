@@ -35,7 +35,7 @@
     ],
     "base": {
         "app_type": "rstudio",
-        "docker_image": "harvardat/rstudio-master:4bbadfad",
+        "docker_image": "rocker/verse:4.2.1", 
         "git_branch": "master",
         "git_dir": "fas-ondemand-rstudio",
         "git_url": "https://github.com/fasrc/fas-ondemand-rstudio.git"
