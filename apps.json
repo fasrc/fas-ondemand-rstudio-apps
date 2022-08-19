@@ -21,6 +21,16 @@
                 "value": 16
             },
             "title": "Rstudio Server - SCRB 155"
+        },
+        {
+            "app_name": "fas-rstudio-scrb50",
+            "cpu": {
+                "value": 8
+            },
+            "memory": {
+                "value": 16
+            },
+            "title": "Rstudio Server - SCRB 50"
         }
     ],
     "base": {
