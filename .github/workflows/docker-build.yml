@@ -3,8 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       app_name:
-        description: "App Name (e.g. fas-rstudio-general)"
+        description: "App name (e.g. fas-rstudio-general)"
         required: true
+        default: ""
+      app_version:
+        description: "App version (e.g. branch or tag)"
+        required: false
         default: ""
 
 jobs:
@@ -12,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: "${{ github.event.inputs.app_version }}"
 
       - name: Set APP_NAME env variable
         run: |
