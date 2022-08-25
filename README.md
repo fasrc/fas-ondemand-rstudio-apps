@@ -17,12 +17,7 @@ Notes:
 
 ## Github Actions
 
-Github Actions will automatically build an image if the app is pushed and it contains a `Dockerfile`. Once published to docker hub, it will be available to be pulled and converted to a singularity image on the RC academic cluster. 
-
-Workflows:
-
-1. **Docker build and push** (manual): This workflow can be triggered manually from the Github Actions UI to build the docker image for a specific app. This can be done any time, and it will automatically build and push to docker hub. 
-2. **Trigger docker build** (push event): This workflow is triggered automatically by a `push` to the repository, which simply identifies which `Dockerfile` changed and then dispatches to the **Docker build and push** workflow. Note that if the push has changed multiple docker files, only the first one will trigger a build. The rest will need to be dispatched manually.
+Github Actions will automatically build an image if the app is pushed and it contains a `Dockerfile`. Once published to docker hub at [harvardat](https://hub.docker.com/u/harvardat), it will be available to be pulled and converted to a singularity image on the RC academic cluster. 
 
 ## Updating apps.json
 
