@@ -1,0 +1,68 @@
+name: Docker CI
+
+on:
+  push:
+    paths:
+      - 'apps/*/Dockerfile'
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # No shallow clone, we need all history!
+
+      - name: Find changed dockerfiles by comparing to the default branch
+        if: "github.event.created"
+        run: |
+          DEFAULT_BRANCH_SHA=$(git rev-parse origin/${{ github.event.repository.default_branch }})
+          CHANGED_DOCKERFILES=$(git diff --name-only $DEFAULT_BRANCH_SHA..${{ github.event.after }} | egrep '^apps/[^/]+/Dockerfile$');
+          echo "CHANGED_DOCKERFILES=$CHANGED_DOCKERFILES" >> $GITHUB_ENV
+          echo $CHANGED_DOCKERFILES
+
+      - name: Find changed dockerfiles by comparing to the most recent commit before the push
+        if: "!github.event.created"  # quoted to avoid yaml unexpected tag error with exclamation mark
+        run: |
+          CHANGED_DOCKERFILES=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | egrep '^apps/[^/]+/Dockerfile$');
+          echo "CHANGED_DOCKERFILES=$CHANGED_DOCKERFILES" >> $GITHUB_ENV
+
+      - name: Set APP_NAME env variable
+        run: |
+          APP_NAME=$(echo $CHANGED_DOCKERFILES | cut -d '/' -f 2  | sort | head -n 1)
+          echo "APP_NAME=$APP_NAME" >> $GITHUB_ENV
+          echo $APP_NAME
+
+      - name: Ensure APP_NAME is defined
+        if: "!env.APP_NAME"
+        run: exit 1
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Dockerhub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Configure docker image metadata
+        id: docker_meta
+        uses: docker/metadata-action@v4
+        with:
+          images: harvardat/${{ env.APP_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=sha
+
+      - name: Build and push the docker image
+        id: docker_build
+        uses: docker/build-push-action@v3
+        with:
+          file: "./apps/${{ env.APP_NAME }}/Dockerfile"
+          push: true
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
