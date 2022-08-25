@@ -12,7 +12,12 @@ jobs:
           fetch-depth: 0 # No shallow clone, we need all history!
       - name: Find Dockerfile that changed
         run: |
-          CHANGED_DOCKERFILES=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | egrep '^apps/[^/]+/Dockerfile$')
+          if [ "${{ github.event.before }}" == "0000000000000000000000000000000000000000" ]; then
+            CHANGED_DOCKERFILES=$(git diff --name-only ${{ github.event.repository.default_branch }}..${{ github.event.after }} | egrep '^apps/[^/]+/Dockerfile$');
+          else
+            CHANGED_DOCKERFILES=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | egrep '^apps/[^/]+/Dockerfile$');
+          fi;
+          echo "Changed dockerfiles: $CHANGED_DOCKERFILES"
           CHANGED_APP_NAME=$(echo $CHANGED_DOCKERFILES | cut -d '/' -f 2  | sort | head -n 1)
           echo "CHANGED_APP_NAME=$CHANGED_APP_NAME" >> $GITHUB_ENV
       - name: Repository Dispatch
