@@ -121,8 +121,8 @@ RUN tlmgr install fira lato roboto \
   	&& rm -f install-getnonfreefonts \
 	&& getnonfreefonts --sys arial-urw
 
-## Explicitly requested packages 
-# 
+## Explicitly requested packages
+#
 # For example:
 #
 #  RUN install2.r corrplot learnr
@@ -132,5 +132,4 @@ RUN tlmgr install fira lato roboto \
 #        && Rscript -e 'devtools::install_github("rundel/learnrhash")' \
 #        && Rscript -e 'devtools::install_github("davidkane9/PPBDS.data")'
 
-RUN install2.r -e BiocManager fs curl corrplot data.table pheatmap learnr tidyverse tidymodels raster remotes rgdal Hmisc matrixcalc R.matlab rstan mcmc pdxTrees infer moderndive economiccomplexity sf igraph astrochron caTools caret fields multitaper neuralnet pracma reshape BayesLCA
-
+RUN install2.r -e BayesLCA BiocManager Hmisc MASS R.matlab astrochron boot caTools caret coin corrplot curl data.table economiccomplexity fields fs gapminder glmnet igraph infer learnr lme4 matrixcalc mcmc moderndive multitaper mvtnorm neuralnet pdxTrees perm pheatmap pracma quantmod quantreg randomForest raster remotes reshape rgdal rpart rpart.plot rstan sandwich sf tidymodels tidyverse
