@@ -4,7 +4,7 @@ This is the default image for Rstudio in FAS OnDemand. It's intended to meet the
 
 ## Base Image
 
-This image is based on the [Rocker Project](https://rocker-project.org/) and in particular the [Version-stable Rocker Images](https://github.com/rocker-org/rocker-versioned2) which install a fixed version of R from source and R packages from a fixed snapshot of CRAN for reproducibility. 
+This image is based on the [Rocker Project](https://rocker-project.org/) and in particular the [Version-stable Rocker Images](https://github.com/rocker-org/rocker-versioned2) which install a fixed version of R from source and R packages from a fixed snapshot of CRAN for reproducibility.
 
 See [rocker/verse](https://hub.docker.com/r/rocker/verse/tags) on docker hub.
 
@@ -20,3 +20,30 @@ The `packages.txt` file contains the list of installed packages in the image, wh
 docker run --rm image:tag Rscript -e "as.data.frame(installed.packages()[,c(1,3)])" >packages.txt
 ```
 
+## OnDemand Configuration
+
+The `form.yml` file needs to be configured so that the `rstudio_version` references the correct image, keeping in mind that the docker image must be pulled by academic cluster staff, converted to the [Singularity](https://docs.sylabs.io/guides/3.0/user-guide/quick_start.html) image format, and made available to Ondemand in order to use it.
+
+Here's the change that needs to be made in `form.yml`:
+
+```yaml
+---
+title: Rstudio Server
+cluster: "academic"
+attributes:
+  rstudio_version: "imagename.sif"  # <-- Change Me
+```
+
+The naming convention we've adopted for converting docker images to singularity files (`.sif`) is as follows:
+
+```
+user/repo:tag -> user_repo_tag.sif
+```
+
+For example:
+
+```
+harvardat/fas-rstudio-general:sha-7b5663a -> harvardat_fas-rstudio-general_sha-7b5663a.sif
+```
+
+Note that the `form.yml` can be updated before the image is pulled to the cluster, but just be aware that the server won't launch successfully until the image is actually available in the cluster.
