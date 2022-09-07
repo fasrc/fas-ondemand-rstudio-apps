@@ -8,7 +8,7 @@ attributes:
   bc_queue: "academic"
   custom_time:
     label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM)."
-    value: "04:00:00"
+    value: "02:00:00"
     widget: text_field
   custom_email_address:
     label: email address for status notification
