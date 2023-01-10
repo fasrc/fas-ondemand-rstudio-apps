@@ -20,6 +20,22 @@ The `packages.txt` file contains the list of installed packages in the image, wh
 docker run --rm image:tag Rscript -e "as.data.frame(installed.packages()[,c(1,3)])" >packages.txt
 ```
 
+## Building locally
+
+To build the image, you can run the following command from this directory:
+
+```
+docker build -t fas-rstudio-general .
+```
+
+After you have built the image, you can run this command to start the RStudio server for testing:
+
+```
+docker run --rm -ti -p 8787:8787 fas-rstudio-general
+```
+
+The image will generate a password and display it in the terminal output. You can use this password with the username `rstudio` to log in and test the server at `localhost:8787`.
+
 ## OnDemand Configuration
 
 The `form.yml` file needs to be configured so that the `rstudio_version` references the correct image, keeping in mind that the docker image must be pulled by academic cluster staff, converted to the [Singularity](https://docs.sylabs.io/guides/3.0/user-guide/quick_start.html) image format, and made available to Ondemand in order to use it.

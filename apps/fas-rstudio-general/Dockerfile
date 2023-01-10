@@ -1,4 +1,4 @@
-FROM rocker/verse:4.2.1
+FROM rocker/verse:4.2.2
 
 ## adding stuff from  https://github.com/Bioconductor/bioconductor_docker/blob/master/Dockerfile
 
@@ -132,4 +132,74 @@ RUN tlmgr install fira lato roboto \
 #        && Rscript -e 'devtools::install_github("rundel/learnrhash")' \
 #        && Rscript -e 'devtools::install_github("davidkane9/PPBDS.data")'
 
-RUN install2.r -e BayesLCA BiocManager Hmisc MASS R.matlab astrochron boot caTools caret coin corrplot curl data.table economiccomplexity fields fs gapminder glmnet igraph infer learnr lme4 matrixcalc mcmc moderndive multitaper mvtnorm neuralnet pdxTrees perm pheatmap pracma quantmod quantreg randomForest raster remotes reshape rgdal rpart rpart.plot rstan sandwich sf tidymodels tidyverse
+RUN install2.r --error --skipinstalled \
+	BayesLCA \
+	BiocManager \
+	Hmisc \
+	MASS \
+	R.matlab \
+	astrochron \
+	boot \
+	caTools \
+	caret \
+	coin \
+	corrplot \
+	curl \
+	data.table \
+	economiccomplexity \
+	fields \
+	fs \
+	gapminder \
+	glmnet \
+	igraph \
+	infer \
+	learnr \
+	lme4 \
+	matrixcalc \
+	mcmc \
+	moderndive \
+	multitaper \
+	mvtnorm \
+	neuralnet \
+	pdxTrees \
+	perm \
+	pheatmap \
+	pracma \
+	quantmod \
+	quantreg \
+	randomForest \
+	raster \
+	remotes \
+	reshape \
+	rgdal \
+	rpart \
+	rpart.plot \
+	rstan \
+	sandwich \
+	sf \
+	tidymodels \
+	tidyverse \
+	# STAT 100 Spring 2023
+	babynames \
+	cowplot \
+	GGally \
+	gglm \
+	ggrepel \
+	knitr \
+	Lock5Data \
+	mosaic \
+	mosaicData \
+	NHANES \
+	palmerpenguins \
+	rmarkdown \
+	Sleuth3 \
+	tinytex \
+	broom \
+	devtools \
+	janitor \
+	lubridate \
+	markdown \
+	nycflights13 \
+	patchwork \
+	reprex
+	# END STAT 100 Spring 2023 requirements
