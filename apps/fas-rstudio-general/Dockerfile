@@ -8,6 +8,9 @@ RUN rm -f /var/lib/dpkg/available && apt clean && dpkg --clear-avail
 # 'debconf: unable to initialize frontend: Dialog'
 ENV DEBIAN_FRONTEND noninteractive
 
+# This is to ensure that the image has access to rstudio commands
+ENV PATH="${PATH}:/usr/lib/rstudio-server/bin"
+
 # Update apt-get
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends apt-utils \
