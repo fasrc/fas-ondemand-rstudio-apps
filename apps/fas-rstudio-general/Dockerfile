@@ -204,5 +204,27 @@ RUN install2.r --error --skipinstalled \
 	markdown \
 	nycflights13 \
 	patchwork \
-	reprex
+	reprex \
 	# END STAT 100 Spring 2023 requirements
+	#STAT 108 Spring 2023 requirements
+	kable \
+	kableextra \
+	gt \
+	ggimage \
+	RColorBrewer \
+	ggthemes \
+	gganimate \
+	plotly \
+	gitcreds \
+	leaflet \
+	tidytext \
+	shiny \
+	shinydashboard \
+	flexdashboard \
+	usethis \
+	assertthat \
+	testthat \
+	distill \
+	httr \
+	rvest
+	# END STAT 108 Spring 2023 requirements
