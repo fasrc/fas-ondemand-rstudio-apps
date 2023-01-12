@@ -207,8 +207,7 @@ RUN install2.r --error --skipinstalled \
 	reprex \
 	# END STAT 100 Spring 2023 requirements
 	#STAT 108 Spring 2023 requirements
-	kable \
-	kableextra \
+	kableExtra \
 	gt \
 	ggimage \
 	RColorBrewer \
