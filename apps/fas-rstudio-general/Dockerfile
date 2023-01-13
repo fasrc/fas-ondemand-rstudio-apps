@@ -227,3 +227,6 @@ RUN install2.r --error --skipinstalled \
 	httr \
 	rvest
 	# END STAT 108 Spring 2023 requirements
+
+# Install oibiostat for STAT 102, spring 2023
+RUN Rscript -e 'devtools::install_github("OI-Biostat/oi_biostat_data")'

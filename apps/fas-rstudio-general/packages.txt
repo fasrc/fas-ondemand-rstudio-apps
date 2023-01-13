@@ -1,4 +1,5 @@
                               Package    Version
+airports                     airports      0.1.0
 arrow                           arrow     10.0.1
 askpass                       askpass        1.1
 assertthat                 assertthat      0.2.1
@@ -27,8 +28,9 @@ caret                           caret     6.0-93
 caTools                       caTools     1.18.2
 cellranger                 cellranger      1.1.0
 checkmate                   checkmate      2.1.0
+cherryblossom           cherryblossom      0.1.0
 classInt                     classInt      0.4-8
-cli                               cli      3.5.0
+cli                               cli      3.6.0
 clipr                           clipr      0.8.0
 clock                           clock      0.6.1
 coda                             coda     0.19-4
@@ -117,7 +119,7 @@ gt                                 gt      0.8.0
 gtable                         gtable      0.3.1
 hardhat                       hardhat      1.2.0
 haven                           haven      2.5.1
-highr                           highr        0.9
+highr                           highr       0.10
 Hmisc                           Hmisc      4.7-2
 hms                               hms      1.1.2
 htmlTable                   htmlTable      2.4.1
@@ -197,6 +199,8 @@ NHANES                         NHANES      2.1.0
 nloptr                         nloptr      2.0.3
 numDeriv                     numDeriv 2016.8-1.1
 nycflights13             nycflights13      1.0.2
+oibiostat                   oibiostat      0.2.0
+openintro                   openintro      2.4.0
 openssl                       openssl      2.0.5
 operator.tools         operator.tools      1.6.3
 packrat                       packrat      0.8.1
@@ -301,7 +305,7 @@ spam                             spam      2.9-1
 SparseM                       SparseM       1.81
 SQUAREM                       SQUAREM     2021.1
 StanHeaders               StanHeaders   2.21.0-7
-stringi                       stringi      1.7.8
+stringi                       stringi     1.7.12
 stringr                       stringr      1.5.0
 svglite                       svglite      2.1.1
 sys                               sys      3.4.1
@@ -328,6 +332,7 @@ tweenr                         tweenr      2.0.2
 tzdb                             tzdb      0.3.0
 units                           units      0.8-1
 urlchecker                 urlchecker      1.0.1
+usdata                         usdata      0.2.0
 usethis                       usethis      2.1.6
 utf8                             utf8      1.2.2
 uuid                             uuid      1.1-0
@@ -347,7 +352,7 @@ wk                                 wk      0.7.1
 workflows                   workflows      1.1.2
 workflowsets             workflowsets      1.0.0
 xaringan                     xaringan       0.28
-xfun                             xfun       0.35
+xfun                             xfun       0.36
 xml2                             xml2      1.3.3
 xopen                           xopen      1.0.0
 xtable                         xtable      1.8-4
