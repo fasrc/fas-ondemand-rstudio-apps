@@ -1,4 +1,4 @@
-FROM rocker/verse:4.2.1
+FROM rocker/verse:4.2.2
 
 ## adding stuff from  https://github.com/Bioconductor/bioconductor_docker/blob/master/Dockerfile
 
@@ -7,6 +7,9 @@ RUN rm -f /var/lib/dpkg/available && apt clean && dpkg --clear-avail
 # This is to avoid the error
 # 'debconf: unable to initialize frontend: Dialog'
 ENV DEBIAN_FRONTEND noninteractive
+
+# This is to ensure that the image has access to rstudio commands
+ENV PATH="${PATH}:/usr/lib/rstudio-server/bin"
 
 # Update apt-get
 RUN apt-get update \
@@ -132,4 +135,98 @@ RUN tlmgr install fira lato roboto \
 #        && Rscript -e 'devtools::install_github("rundel/learnrhash")' \
 #        && Rscript -e 'devtools::install_github("davidkane9/PPBDS.data")'
 
-RUN install2.r -e BayesLCA BiocManager Hmisc MASS R.matlab astrochron boot caTools caret coin corrplot curl data.table economiccomplexity fields fs gapminder glmnet igraph infer learnr lme4 matrixcalc mcmc moderndive multitaper mvtnorm neuralnet pdxTrees perm pheatmap pracma quantmod quantreg randomForest raster remotes reshape rgdal rpart rpart.plot rstan sandwich sf tidymodels tidyverse
+RUN install2.r --error --skipinstalled \
+	BayesLCA \
+	BiocManager \
+	Hmisc \
+	MASS \
+	R.matlab \
+	astrochron \
+	boot \
+	caTools \
+	caret \
+	coin \
+	corrplot \
+	curl \
+	data.table \
+	economiccomplexity \
+	fields \
+	fs \
+	gapminder \
+	glmnet \
+	igraph \
+	infer \
+	learnr \
+	lme4 \
+	matrixcalc \
+	mcmc \
+	moderndive \
+	multitaper \
+	mvtnorm \
+	neuralnet \
+	pdxTrees \
+	perm \
+	pheatmap \
+	pracma \
+	quantmod \
+	quantreg \
+	randomForest \
+	raster \
+	remotes \
+	reshape \
+	rgdal \
+	rpart \
+	rpart.plot \
+	rstan \
+	sandwich \
+	sf \
+	tidymodels \
+	tidyverse \
+	# STAT 100 Spring 2023
+	babynames \
+	cowplot \
+	GGally \
+	gglm \
+	ggrepel \
+	knitr \
+	Lock5Data \
+	mosaic \
+	mosaicData \
+	NHANES \
+	palmerpenguins \
+	rmarkdown \
+	Sleuth3 \
+	tinytex \
+	broom \
+	devtools \
+	janitor \
+	lubridate \
+	markdown \
+	nycflights13 \
+	patchwork \
+	reprex \
+	# END STAT 100 Spring 2023 requirements
+	#STAT 108 Spring 2023 requirements
+	kableExtra \
+	gt \
+	ggimage \
+	RColorBrewer \
+	ggthemes \
+	gganimate \
+	plotly \
+	gitcreds \
+	leaflet \
+	tidytext \
+	shiny \
+	shinydashboard \
+	flexdashboard \
+	usethis \
+	assertthat \
+	testthat \
+	distill \
+	httr \
+	rvest
+	# END STAT 108 Spring 2023 requirements
+
+# Install oibiostat for STAT 102, spring 2023
+RUN Rscript -e 'devtools::install_github("OI-Biostat/oi_biostat_data")'

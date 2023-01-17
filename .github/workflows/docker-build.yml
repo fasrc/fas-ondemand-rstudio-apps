@@ -41,7 +41,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4
         with:
-          images: harvardat/${{ env.APP_NAME }}
+          images: huitacademictechnology/${{ env.APP_NAME }}
           tags: |
             type=ref,event=branch
             type=sha
