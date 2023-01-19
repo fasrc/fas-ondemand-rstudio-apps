@@ -13,22 +13,22 @@ attributes:
   custom_email_address:
     label: email address for status notification
     widget: text_field
-  
+
   custom_memory_per_node: 8
-  
-  
+
+
   custom_num_cores: 2
-  
-  custom_num_gpus: 0 
-  rstudio_version: rocker_verse_4.2.2.sif
+
+  custom_num_gpus: 0
+  rstudio_version: huitacademictechnology_fas-rstudio-bst282_sha-5f28264.sif
   custom_vanillaconf:
     label: "Start rstudio with a new configuration"
     widget: check_box
     value: 1
     help: |
-          **_Checking this box will start rstudio with a fresh configuration._** 
-          
-          This is useful if you need to run different instances at the same time with different configurations.<br> 
+          **_Checking this box will start rstudio with a fresh configuration._**
+
+          This is useful if you need to run different instances at the same time with different configurations.<br>
           Leave the box unchecked if you want rstudio to start with the default configuration you have in your ~/.rstudio
 
 form:
