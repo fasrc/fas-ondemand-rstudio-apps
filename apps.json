@@ -3,10 +3,10 @@
         {
             "app_name": "fas-rstudio-general",
             "cpu": {
-                "value": 8
+                "value": 2
             },
             "memory": {
-                "value": 16
+                "value": 8
             },
             "title": "Rstudio Server"
         },
@@ -31,11 +31,21 @@
                 "value": 16
             },
             "title": "Rstudio Server - SCRB 50"
+        },
+        {
+            "app_name": "fas-rstudio-bst282",
+            "cpu": {
+                "value": 2
+            },
+            "memory": {
+                "value": 8
+            },
+            "title": "Rstudio Server - BST 282"
         }
     ],
     "base": {
         "app_type": "rstudio",
-        "docker_image": "rocker/verse:4.2.1", 
+        "docker_image": "rocker/verse:4.2.2",
         "git_branch": "master",
         "git_dir": "fas-ondemand-rstudio",
         "git_url": "https://github.com/fasrc/fas-ondemand-rstudio.git"
