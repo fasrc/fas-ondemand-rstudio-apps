@@ -3,10 +3,10 @@
         {
             "app_name": "fas-rstudio-general",
             "cpu": {
-                "value": 2
+                "value": 8
             },
             "memory": {
-                "value": 8
+                "value": 16
             },
             "title": "Rstudio Server"
         },
