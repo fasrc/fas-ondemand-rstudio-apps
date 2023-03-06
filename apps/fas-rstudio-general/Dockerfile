@@ -225,8 +225,11 @@ RUN install2.r --error --skipinstalled \
 	testthat \
 	distill \
 	httr \
-	rvest
+	rvest \
 	# END STAT 108 Spring 2023 requirements
+	# SCRB 50 Spring 2023 requirements
+	Seurat
+	# END SCRB 50 Spring 2023 requirements
 
 # Install oibiostat for STAT 102, spring 2023
 RUN Rscript -e 'devtools::install_github("OI-Biostat/oi_biostat_data")'
