@@ -14,10 +14,23 @@ attributes:
     label: email address for status notification
     widget: text_field
 
-  custom_memory_per_node: 8
+  custom_memory_per_node:
+    widget: number_field
+    value: 8
+    label: Memory per node
+    required: true
+    min: 8
+    max: 16
+    step: 1
 
-
-  custom_num_cores: 2
+  custom_num_cores:
+    widget: number_field
+    value: 2
+    label: Memory per node
+    required: true
+    min: 2
+    max: 8
+    step: 1
 
   custom_num_gpus: 0
   rstudio_version: huitacademictechnology_fas-rstudio-general_sha-aa5ccb8.sif
